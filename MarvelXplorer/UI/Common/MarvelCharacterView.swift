@@ -12,15 +12,15 @@ import SwiftUI
 /// A view displaying a Marvel character's image and name.
 struct MarvelCharacterView: View {
     let character: MarvelCharacter
-    
+
     var body: some View {
         VStack(spacing: 0) {
             imageView
         }
     }
-    
+
     // MARK: - Image View
-    
+
     /// Displays the character's image or a placeholder if unavailable.
     @ViewBuilder
     private var imageView: some View {
@@ -44,7 +44,7 @@ struct MarvelCharacterView: View {
             placeholderImage
         }
     }
-    
+
     /// Placeholder image displayed when no character image is available.
     private var placeholderImage: some View {
         Image(systemName: "photo")
@@ -53,9 +53,9 @@ struct MarvelCharacterView: View {
             .foregroundColor(.gray)
             .opacity(0.3)
     }
-    
+
     // MARK: - Info View
-    
+
     /// Displays the character's name over the image.
     var infoView: some View {
         HStack {

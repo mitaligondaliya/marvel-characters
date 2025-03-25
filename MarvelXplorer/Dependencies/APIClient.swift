@@ -23,7 +23,7 @@ protocol APIClient {
 
 /// NetworkManager responsible for handling API requests and responses.
 class NetworkManager: APIClient {
-    
+
     private let session: URLSession
 
     /// Initializes the NetworkManager with a URLSession instance.
@@ -49,7 +49,7 @@ class NetworkManager: APIClient {
         }
 
         let request = createRequest(for: endpoint, url: url)
-        
+
         logRequest(request)
 
         return session.dataTaskPublisher(for: request)
@@ -84,7 +84,7 @@ class NetworkManager: APIClient {
         guard let httpResponse = output.response as? HTTPURLResponse else {
             throw APIError.invalidResponse
         }
-        
+
         switch httpResponse.statusCode {
         case 200...299:
             return output.data
@@ -122,11 +122,16 @@ class NetworkManager: APIClient {
             return .unknownError(error)
         }
     }
-    
+
     /// Logs request details for debugging.
     /// - Parameter request: The URLRequest being logged.
     private func logRequest(_ request: URLRequest) {
-        os_log("📡 [Request] %@ %@", log: .default, type: .info, request.httpMethod ?? "", request.url?.absoluteString ?? "")
+        os_log(
+            "📡 [Request] %@ %@",
+            log: .default,
+            type: .info, request.httpMethod ?? "",
+            request.url?.absoluteString ?? ""
+        )
     }
 
     /// Logs response details for debugging.
@@ -135,7 +140,13 @@ class NetworkManager: APIClient {
     ///   - data: The response data.
     private func logResponse(_ response: URLResponse, data: Data) {
         if let httpResponse = response as? HTTPURLResponse {
-            os_log("✅ [Response] Status Code: %d, %d bytes received", log: .default, type: .info, httpResponse.statusCode, data.count)
+            os_log(
+                "✅ [Response] Status Code: %d, %d bytes received",
+                log: .default,
+                type: .info,
+                httpResponse.statusCode,
+                data.count
+            )
         }
     }
 }

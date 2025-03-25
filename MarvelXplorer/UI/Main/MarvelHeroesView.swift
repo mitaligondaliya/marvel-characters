@@ -13,7 +13,7 @@ import SwiftUI
 /// and error handling in case of API failures.
 struct MarvelHeroesView: View {
     @StateObject private var viewModel = MarvelHeroesViewModel()
-  
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -46,9 +46,9 @@ private extension MarvelHeroesView {
                 .transition(.opacity)
         }
     }
-    
+
     // MARK: - Heroes List View
-    
+
     /// A list view displaying all fetched Marvel heroes.
     var heroesListView: some View {
         List {
@@ -65,30 +65,30 @@ private extension MarvelHeroesView {
         }
         .listStyle(.plain)
     }
-    
+
     // MARK: - Error State View
-    
+
     /// A reusable error state view displayed when there is an issue fetching heroes.
     struct ErrorStateView: View {
         let errorMessage: String
         let retryAction: () -> Void
-        
+
         var body: some View {
             VStack(spacing: 12) {
                 Image(systemName: "exclamationmark.triangle.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
                     .foregroundColor(.yellow)
-                
+
                 Text("Oops! Something went wrong.")
                     .font(.headline)
-                
+
                 Text(errorMessage)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
-                
+
                 Button(action: retryAction) {
                     Text("Retry")
                         .fontWeight(.bold)
@@ -103,9 +103,9 @@ private extension MarvelHeroesView {
             .padding()
         }
     }
-    
+
     // MARK: - Load Heroes
-    
+
     /// Triggers the hero fetch operation in the view model.
     private func loadHeroes() {
         viewModel.fetchCharacters()

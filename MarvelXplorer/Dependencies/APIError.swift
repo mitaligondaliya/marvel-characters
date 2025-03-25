@@ -13,33 +13,33 @@ import Foundation
 enum APIError: Error, LocalizedError, Equatable {
     /// The requested URL is invalid.
     case invalidURL
-    
+
     /// The server returned no content (HTTP 204).
     case noContent
-    
+
     /// The server response was invalid or unexpected.
     case invalidResponse
-    
+
     /// The request was unauthorized (HTTP 401).
     case unauthorized
-    
+
     /// A network-related error occurred.
     /// - Parameter urlError: The underlying `URLError` that caused the failure.
     case networkError(URLError)
-    
+
     /// A server error occurred with a specific status code.
     /// - Parameters:
     ///   - statusCode: The HTTP status code received from the server.
     ///   - message: An optional message describing the server error.
     case serverError(statusCode: Int, message: String?)
-    
+
     /// The response data could not be decoded correctly.
     /// - Parameter description: A message describing the decoding failure.
     case decodingError(description: String)
-    
+
     /// The request timed out due to network issues.
     case timeout
-    
+
     /// An unknown error occurred.
     /// - Parameter error: An optional underlying error.
     case unknownError(Error?)
@@ -73,7 +73,7 @@ enum APIError: Error, LocalizedError, Equatable {
             return false
         }
     }
-    
+
     /// Provides a user-friendly description of the error.
     var errorDescription: String? {
         switch self {

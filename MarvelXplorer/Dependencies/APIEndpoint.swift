@@ -59,4 +59,3 @@ enum APIEndpoint {
         return components?.url
     }
 }
-

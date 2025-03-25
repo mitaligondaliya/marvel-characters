@@ -41,7 +41,7 @@ extension MarvelCharacter: Equatable {
                lhs.description == rhs.description &&
                lhs.thumbnail == rhs.thumbnail
     }
-    
+
     /// Example Marvel character for previews or testing.
     public static var example: MarvelCharacter {
         MarvelCharacter(

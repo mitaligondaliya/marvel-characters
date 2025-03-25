@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48E8E7D62D75DD7300AB949F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 48E8E7D52D75DD6A00AB949F /* .swiftlint.yml */; };
+		487C96642D9283EA004C5357 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 487C96632D9283E1004C5357 /* swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +31,7 @@
 		486EA9C42D3F74BC00C1D364 /* MarvelXplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelXplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		486EA9D52D3F74C000C1D364 /* MarvelXplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelXplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		486EA9DF2D3F74C100C1D364 /* MarvelXplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelXplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		48E8E7D52D75DD6A00AB949F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		487C96632D9283E1004C5357 /* swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -95,7 +95,7 @@
 		486EA9BB2D3F74BC00C1D364 = {
 			isa = PBXGroup;
 			children = (
-				48E8E7D52D75DD6A00AB949F /* .swiftlint.yml */,
+				487C96632D9283E1004C5357 /* swiftlint.yml */,
 				486EA9C62D3F74BC00C1D364 /* MarvelXplorer */,
 				486EA9D82D3F74C000C1D364 /* MarvelXplorerTests */,
 				486EA9E22D3F74C100C1D364 /* MarvelXplorerUITests */,
@@ -123,7 +123,7 @@
 				486EA9C02D3F74BC00C1D364 /* Sources */,
 				486EA9C12D3F74BC00C1D364 /* Frameworks */,
 				486EA9C22D3F74BC00C1D364 /* Resources */,
-				48E8E7D42D75DCCA00AB949F /* ShellScript */,
+				487C96622D9283BF004C5357 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -234,7 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48E8E7D62D75DD7300AB949F /* .swiftlint.yml in Resources */,
+				487C96642D9283EA004C5357 /* swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,10 +255,10 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		48E8E7D42D75DCCA00AB949F /* ShellScript */ = {
+		487C96622D9283BF004C5357 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -269,10 +269,9 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

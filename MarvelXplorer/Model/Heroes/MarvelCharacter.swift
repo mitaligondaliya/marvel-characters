@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct MarvelCharacter: Identifiable, Decodable {
+// MARK: - Marvel Character Model
+
+/// Represents a Marvel character with an ID, name, description, thumbnail, and comics.
+struct MarvelCharacter: Identifiable, Codable, Hashable {
     let id: Int
     let name: String
     let description: String
@@ -15,16 +18,31 @@ struct MarvelCharacter: Identifiable, Decodable {
     let comics: Comics?
 }
 
-struct Thumbnail: Decodable {
+// MARK: - Thumbnail Model
+
+/// Stores the thumbnail image details for a Marvel character.
+struct Thumbnail: Codable, Equatable, Hashable {
     let path: String
     let `extension`: String
 
+    /// Generates a full URL for the thumbnail image.
     var url: URL? {
         return URL(string: "\(path).\(`extension`)")
     }
 }
 
-extension MarvelCharacter {
+// MARK: - MarvelCharacter Extensions
+
+extension MarvelCharacter: Equatable {
+    /// Checks equality between two MarvelCharacter instances.
+    static func == (lhs: MarvelCharacter, rhs: MarvelCharacter) -> Bool {
+        return lhs.id == rhs.id &&
+               lhs.name == rhs.name &&
+               lhs.description == rhs.description &&
+               lhs.thumbnail == rhs.thumbnail
+    }
+    
+    /// Example Marvel character for previews or testing.
     public static var example: MarvelCharacter {
         MarvelCharacter(
             id: 102123, name: "A.I.M",

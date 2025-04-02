@@ -56,6 +56,17 @@
                ReferencedContainer = "container:MarvelXplorer.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4801CCFE2D9D972D001434DB"
+               BuildableName = "MarvelXplorerXCUnitTests.xctest"
+               BlueprintName = "MarvelXplorerXCUnitTests"
+               ReferencedContainer = "container:MarvelXplorer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -11,6 +11,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4801CD032D9D972D001434DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 486EA9BC2D3F74BC00C1D364 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 486EA9C32D3F74BC00C1D364;
+			remoteInfo = MarvelXplorer;
+		};
 		486EA9D62D3F74C000C1D364 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 486EA9BC2D3F74BC00C1D364 /* Project object */;
@@ -28,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4801CCFF2D9D972D001434DB /* MarvelXplorerXCUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelXplorerXCUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		486EA9C42D3F74BC00C1D364 /* MarvelXplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelXplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		486EA9D52D3F74C000C1D364 /* MarvelXplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelXplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		486EA9DF2D3F74C100C1D364 /* MarvelXplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelXplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +55,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		4801CD002D9D972D001434DB /* MarvelXplorerXCUnitTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MarvelXplorerXCUnitTests;
+			sourceTree = "<group>";
+		};
 		486EA9C62D3F74BC00C1D364 /* MarvelXplorer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -68,6 +81,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4801CCFC2D9D972D001434DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		486EA9C12D3F74BC00C1D364 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,6 +119,7 @@
 				486EA9C62D3F74BC00C1D364 /* MarvelXplorer */,
 				486EA9D82D3F74C000C1D364 /* MarvelXplorerTests */,
 				486EA9E22D3F74C100C1D364 /* MarvelXplorerUITests */,
+				4801CD002D9D972D001434DB /* MarvelXplorerXCUnitTests */,
 				486EA9C52D3F74BC00C1D364 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +130,7 @@
 				486EA9C42D3F74BC00C1D364 /* MarvelXplorer.app */,
 				486EA9D52D3F74C000C1D364 /* MarvelXplorerTests.xctest */,
 				486EA9DF2D3F74C100C1D364 /* MarvelXplorerUITests.xctest */,
+				4801CCFF2D9D972D001434DB /* MarvelXplorerXCUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +138,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4801CCFE2D9D972D001434DB /* MarvelXplorerXCUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4801CD072D9D972D001434DB /* Build configuration list for PBXNativeTarget "MarvelXplorerXCUnitTests" */;
+			buildPhases = (
+				4801CCFB2D9D972D001434DB /* Sources */,
+				4801CCFC2D9D972D001434DB /* Frameworks */,
+				4801CCFD2D9D972D001434DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4801CD042D9D972D001434DB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4801CD002D9D972D001434DB /* MarvelXplorerXCUnitTests */,
+			);
+			name = MarvelXplorerXCUnitTests;
+			packageProductDependencies = (
+			);
+			productName = MarvelXplorerXCUnitTests;
+			productReference = 4801CCFF2D9D972D001434DB /* MarvelXplorerXCUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		486EA9C32D3F74BC00C1D364 /* MarvelXplorer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 486EA9E92D3F74C100C1D364 /* Build configuration list for PBXNativeTarget "MarvelXplorer" */;
@@ -192,9 +237,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					4801CCFE2D9D972D001434DB = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 486EA9C32D3F74BC00C1D364;
+					};
 					486EA9C32D3F74BC00C1D364 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -225,11 +274,19 @@
 				486EA9C32D3F74BC00C1D364 /* MarvelXplorer */,
 				486EA9D42D3F74C000C1D364 /* MarvelXplorerTests */,
 				486EA9DE2D3F74C100C1D364 /* MarvelXplorerUITests */,
+				4801CCFE2D9D972D001434DB /* MarvelXplorerXCUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4801CCFD2D9D972D001434DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		486EA9C22D3F74BC00C1D364 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +333,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4801CCFB2D9D972D001434DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		486EA9C02D3F74BC00C1D364 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +364,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4801CD042D9D972D001434DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 486EA9C32D3F74BC00C1D364 /* MarvelXplorer */;
+			targetProxy = 4801CD032D9D972D001434DB /* PBXContainerItemProxy */;
+		};
 		486EA9D72D3F74C000C1D364 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 486EA9C32D3F74BC00C1D364 /* MarvelXplorer */;
@@ -313,6 +382,45 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4801CD052D9D972D001434DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.MarvelXplorerXCUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelXplorer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MarvelXplorer";
+			};
+			name = Debug;
+		};
+		4801CD062D9D972D001434DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.MarvelXplorerXCUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelXplorer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MarvelXplorer";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		486EA9E72D3F74C100C1D364 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -602,6 +710,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4801CD072D9D972D001434DB /* Build configuration list for PBXNativeTarget "MarvelXplorerXCUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4801CD052D9D972D001434DB /* Debug */,
+				4801CD062D9D972D001434DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		486EA9BF2D3F74BC00C1D364 /* Build configuration list for PBXProject "MarvelXplorer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

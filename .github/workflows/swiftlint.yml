@@ -33,7 +33,8 @@ jobs:
           else
             echo "No Swift files changed."
           fi
-
+      - name: Show available simulators
+        run: xcrun simctl list devices
       - name: Run Tests
         run: |
           xcodebuild test \

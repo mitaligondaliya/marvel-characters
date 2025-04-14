@@ -13,14 +13,14 @@ on:
 
 jobs:
   lint-and-test:
-    runs-on: macos-14
+    runs-on: macos-latest
 
     env:
       DEVELOPER_DIR: /Applications/Xcode_16.2.app/Contents/Developer
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install SwiftLint
         run: brew install swiftlint

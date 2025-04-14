@@ -34,9 +34,9 @@ jobs:
             echo "No Swift files changed."
           fi
 
-      - name: Build Project
+      - name: Run Tests (Xcodebuild)
         run: |
-          xcodebuild clean build \
+          xcodebuild test \
             -scheme MarvelXplorer \
             -project MarvelXplorer.xcodeproj \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest'

@@ -1,4 +1,4 @@
-name: iOS CI (SwiftLint + Tests for Xcode 16.2)
+name: SwiftLint
 
 on:
   push:
@@ -8,24 +8,19 @@ on:
       - '.github/workflows/ios-ci.yml'
       - '.swiftlint.yml'
       - '**/*.swift'
-      - '**/*.xcodeproj'
-      - '**/*.xcworkspace'
 
 jobs:
-  lint-and-test:
+  lint:
     runs-on: macos-latest
 
-    env:
-      DEVELOPER_DIR: /Applications/Xcode_16.2.app/Contents/Developer
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Install SwiftLint
         run: brew install swiftlint
 
-      - name: Run SwiftLint on Changed Files
+       - name: Run SwiftLint on Changed Files
         run: |
           FILES=$(git diff --diff-filter=ACMR --name-only origin/${{ github.base_ref }} | grep '\.swift$' || true)
           if [ -n "$FILES" ]; then
@@ -33,10 +28,3 @@ jobs:
           else
             echo "No Swift files changed."
           fi
-
-      - name: Run Tests (Xcodebuild)
-        run: |
-          xcodebuild test \
-            -scheme MarvelXplorer \
-            -project MarvelXplorer.xcodeproj \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest'

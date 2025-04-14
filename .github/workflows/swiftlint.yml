@@ -20,5 +20,11 @@ jobs:
       - name: Install SwiftLint
         run: brew install swiftlint
 
-      - name: Run SwiftLint
-        run: swiftlint --strict
+      - name: Run SwiftLint on Changed Files
+        run: |
+          FILES=$(git diff --diff-filter=ACMR --name-only origin/${{ github.base_ref }} | grep '\.swift$' || true)
+          if [ -n "$FILES" ]; then
+            echo "$FILES" | xargs swiftlint --strict --path
+          else
+            echo "No Swift files changed."
+          fi

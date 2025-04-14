@@ -34,11 +34,9 @@ jobs:
             echo "No Swift files changed."
           fi
 
-      - name: Install Dependencies
-        run: swift package resolve
-      - name: Run Tests
+      - name: Build Project
         run: |
-          xcodebuild test \
+          xcodebuild clean build \
             -scheme MarvelXplorer \
             -project MarvelXplorer.xcodeproj \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest'

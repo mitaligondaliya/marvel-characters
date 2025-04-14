@@ -33,7 +33,9 @@ jobs:
           else
             echo "No Swift files changed."
           fi
-          
+
+      - name: Install Dependencies
+        run: swift package resolve
       - name: Run Tests
         run: |
           xcodebuild test \

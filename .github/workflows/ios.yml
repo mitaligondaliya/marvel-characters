@@ -33,5 +33,5 @@ jobs:
       run: |
         xcodebuild test \
           -scheme MarvelXplorer \
-          -workspace MarvelXplorer.xcodeproj \ # use .xcodeproj if not using workspace
+          -workspace MarvelXplorer.xcodeproj \
           -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest'

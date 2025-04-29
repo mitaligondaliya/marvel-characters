@@ -49,7 +49,7 @@
 			membershipExceptions = (
 				Info.plist,
 				"Preview Content/Preview Assets.xcassets",
-				Resources/Assets.xcassets,
+				Resources/Assets/Assets.xcassets,
 			);
 			target = 486EA9C32D3F74BC00C1D364 /* MarvelXplorer */;
 		};

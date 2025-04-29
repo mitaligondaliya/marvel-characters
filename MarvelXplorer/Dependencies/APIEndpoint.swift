@@ -45,7 +45,7 @@ enum APIEndpoint {
     var queryParams: [String: String] {
         let timestamp = MarvelAPI.timestamp
         return [
-            "apikey": MarvelAPI.publicKey,
+            "apikey": Secrets.publicKey,
             "ts": timestamp,
             "hash": MarvelAPI.generateHash(timestamp: timestamp)
         ]

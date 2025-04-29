@@ -36,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		4801CCFF2D9D972D001434DB /* MarvelXplorerXCUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelXplorerXCUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4801CD8D2DACEAE7001434DB /* MarvelXplorerXCUnitTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MarvelXplorerXCUnitTests; sourceTree = "<group>"; };
 		486EA9C42D3F74BC00C1D364 /* MarvelXplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelXplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		486EA9D52D3F74C000C1D364 /* MarvelXplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelXplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		486EA9DF2D3F74C100C1D364 /* MarvelXplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelXplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +121,7 @@
 				486EA9D82D3F74C000C1D364 /* MarvelXplorerTests */,
 				486EA9E22D3F74C100C1D364 /* MarvelXplorerUITests */,
 				4801CD002D9D972D001434DB /* MarvelXplorerXCUnitTests */,
+				4801CD8D2DACEAE7001434DB /* MarvelXplorerXCUnitTests */,
 				486EA9C52D3F74BC00C1D364 /* Products */,
 			);
 			sourceTree = "<group>";

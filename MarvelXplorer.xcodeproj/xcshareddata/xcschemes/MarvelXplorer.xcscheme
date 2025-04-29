@@ -33,6 +33,9 @@
             reference = "container:../MarvelXplorer.xctestplan"
             default = "YES">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:MarvelXplorerXCUnitTests">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference

@@ -1,0 +1,30 @@
+name: SwiftLint
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    paths:
+      - '.github/workflows/ios-ci.yml'
+      - '.swiftlint.yml'
+      - '**/*.swift'
+
+jobs:
+  lint:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install SwiftLint
+        run: brew install swiftlint
+
+      - name: Run SwiftLint on Changed Files
+        run: |
+          FILES=$(git diff --diff-filter=ACMR --name-only origin/${{ github.base_ref }} | grep '\.swift$' || true)
+          if [ -n "$FILES" ]; then
+            echo "$FILES" | xargs swiftlint --strict --path
+          else
+            echo "No Swift files changed."
+          fi

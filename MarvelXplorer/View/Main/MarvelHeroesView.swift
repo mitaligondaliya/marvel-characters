@@ -40,6 +40,13 @@ private extension MarvelHeroesView {
             ProgressView("Loading Heroes...")
                 .font(.headline)
         } else if !viewModel.characters.isEmpty {
+            if let error = viewModel.errorMessage {
+                // Show fallback banner if using dummy data
+                Text("⚠️ \(error)")
+                    .font(.caption)
+                    .foregroundColor(.orange)
+                    .padding(.bottom, 4)
+            }
             heroesListView
         } else {
             ErrorStateView(errorMessage: viewModel.errorMessage ?? "No Heroes Found", retryAction: loadHeroes)
@@ -108,6 +115,7 @@ private extension MarvelHeroesView {
 
     /// Triggers the hero fetch operation in the view model.
     private func loadHeroes() {
+        print("on appear")
         viewModel.fetchCharacters()
     }
 }

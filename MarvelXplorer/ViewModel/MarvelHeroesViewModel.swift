@@ -62,9 +62,12 @@ class MarvelHeroesViewModel: ObservableObject {
             .sink(receiveCompletion: { [weak self] completion in
                 guard let self = self else { return }
                 self.isLoading = false
-                if case .failure(let error) = completion {
-                    self.hasFetchedCharacters = false // Reset early if request fails
-                    self.errorMessage = error.errorDescription ?? error.localizedDescription
+                if case .failure = completion {
+//                    self.hasFetchedCharacters = false // Reset early if request fails
+//                    self.errorMessage = error.errorDescription ?? error.localizedDescription
+                    self.hasFetchedCharacters = false // Retry allowed later
+                    self.errorMessage = "API failed, showing offline data."
+                    self.characters = self.loadDummyCharacters()
                 }
             }, receiveValue: { [weak self] characters in
                 guard let self = self else { return }
@@ -74,5 +77,14 @@ class MarvelHeroesViewModel: ObservableObject {
                 self.selectedCharacter = self.characters.first(where: { $0.id == previousSelectionID })
             })
             .store(in: &cancellables)
+    }
+
+    private func loadDummyCharacters() -> [MarvelCharacter] {
+        guard let url = Bundle.main.url(forResource: "DummyCharacters", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let response = try? JSONDecoder().decode(MarvelResponse<MarvelCharacter>.self, from: data) else {
+            return []
+        }
+        return response.data.results
     }
 }
